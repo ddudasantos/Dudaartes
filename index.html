@@ -26,7 +26,7 @@
     <a href="#artes">Artes</a>
     <a href="#loja">Loja</a>
     <a href="#artista">Artista</a>
-    <!--<a href="#sobre">Sobre</a>-->
+    <a href="exemplo.html">Sobre</a>
   </div>
 
   <!-- Conteúdo -->
@@ -40,8 +40,8 @@
     <img src="img/jesus.png" alt="Foto 3">
     <img src="img/sol.png" alt="Foto 4">
   </div>
-    <button class="prev">&#10094;</button> <!-- seta esquerda -->
-    <button class="next">&#10095;</button> <!-- seta direita -->
+    <!--<button class="prev">&#10094;</button>  seta esquerda 
+    <button class="next">&#10095;</button>  seta direita -->
 </div>
 
       <p>Crio arte preta que valoriza a representatividade, explorando o digital e o
@@ -127,6 +127,12 @@
   </div>
 </section>
     </section>
+    <section id="comentarios">
+  <h2>Comentários sobre a Loja</h2>
+  <div class="card-comentario">"Mdss que lindass, eu quero todasss"</div>
+  <div class="card-comentario">"Ecobag maravilhosa"</div>
+  <div class="card-comentario">"Tudo perfeito!!"</div>
+</section>
 
     <section id="artista">
       <h2>Artista</h2>
@@ -168,47 +174,27 @@ Além da expressão artística, também busco transformar minha arte em trabalho
 </footer>
 </body>
 <script>
-  
-    function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-    }
-    function closeNav() {
-      document.getElementById("mySidebar").style.width = "0";
-    }
-    const slides = document.querySelector('.slides');
-const imagens = document.querySelectorAll('.slides img');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
 
-let indice = 0;
+  const slides = document.querySelector('.slides');
+  const imagens = document.querySelectorAll('.slides img');
 
-// Função para atualizar o slide
-function mostrarSlide(novoIndice) {
-  indice = novoIndice;
-  if (indice >= imagens.length) indice = 0;
-  if (indice < 0) indice = imagens.length - 1;
-  slides.style.transform = `translateX(-${indice * 100}%)`;
-}
+  let indice = 0;
 
-// Automatico a cada 3 segundos
-let intervalo = setInterval(() => mostrarSlide(indice + 1), 3000);
+  function mostrarSlide(novoIndice) {
+    indice = novoIndice;
+    if (indice >= imagens.length) indice = 0;
+    if (indice < 0) indice = imagens.length - 1;
+    slides.style.transform = `translateX(-${indice * 100}%)`;
+  }
 
-// Botões de navegação
-next.addEventListener('click', () => {
-  mostrarSlide(indice + 1);
-  resetInterval();
-});
-
-prev.addEventListener('click', () => {
-  mostrarSlide(indice - 1);
-  resetInterval();
-});
-
-// Reseta o intervalo ao clicar, para não conflitar com o automático
-function resetInterval() {
-  clearInterval(intervalo);
-  intervalo = setInterval(() => mostrarSlide(indice + 1), 3000);
-}
-
+  // Carrossel automático
+  setInterval(() => mostrarSlide(indice + 1), 3000);
 </script>
+
 </html>

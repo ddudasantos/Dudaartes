@@ -54,38 +54,36 @@
   object-fit: cover;  /* mantém proporção da imagem e corta excesso */
 }
 
-button.prev {
-  left: 2%;      /* mais perto da imagem */
-}
+/*button.prev {
+  left: 2%;      mais perto da imagem 
+
 
 button.next {
-  right: 2%;     /* mais perto da imagem */
-}
-@media (max-width: 600px) {
-  button.prev, button.next {
-    padding: 8px 12px;  /* reduz tamanho do botão */
-    font-size: 20px;    /* reduz a seta */
-    left: 5%;           /* deixa mais afastado da borda */
-    right: 5%;
-  }
-}
+  right: 2%;     /* mais perto da imagem 
+}*/
 
 button.prev, button.next {
   position: absolute;
-  top: 65%;
+  top: 80%;
   transform: translateY(-65%);
   background-color: rgb(108, 27, 133);
   color: #fff;
   border: none;
-  padding: 10px 16px;  /* pode reduzir também para caber melhor */
+  padding: 0.2rem 0.3rem;  /* reduz o tamanho do botão */
   border-radius: 50%;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 16px;          /* menor que 20px */
   user-select: none;
-  z-index: 10;          /* garante que fique acima das imagens */
+  z-index: 10;
 }
 
-
+/* Ajuste para telas pequenas */
+@media (max-width: 480px) {
+  button.prev, button.next {
+    padding: 0.25rem 0.35rem;
+    font-size: 20px;       /* ainda menor no celular */
+  }
+}
     header h1 {
       margin: 0;
       font-size: 28px;
@@ -224,8 +222,44 @@ button.prev, button.next {
   border: 4px solid var(--accent);  /* borda colorida */
   box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* sombra suave */
 }
+  #comentarios {
+    padding: 40px 20px;
+  }
+  .card-comentario {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 600px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  }
+  /* ===== AJUSTES PARA CELULARES ===== */
+@media (max-width: 480px) {
 
-  footer {
+  /* Galeria fica responsiva */
+  .galeria {
+    width: 90%;
+    height: 350px;
+  }
+
+  /* Ajuste das setas */
+  button.prev, button.next {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    padding: 0.3rem 0.4rem;
+  }
+
+  button.prev {
+    left: 10px;
+  }
+
+  button.next {
+    right: 10px;
+  }
+}
+footer {
   background: var(--panel);
   color: white;
   text-align: center;
