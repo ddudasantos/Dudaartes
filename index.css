@@ -130,6 +130,28 @@ button.prev, button.next {
       background-color: var(--accent);
       color: #fff;
     }
+    /* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+/* Conteúdo principal */
+#conteudo {
+  transition: margin-top 0.3s ease;
+}
+
+/* Quando o menu estiver aberto */
+.menu-aberto #conteudo {
+  margin-top: 220px; /* ajuste esse valor conforme a altura do menu */
+}
+
 
     .closebtn {
       position: absolute;

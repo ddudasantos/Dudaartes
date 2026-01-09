@@ -35,7 +35,7 @@
   <!-- Conteúdo -->
   <main>
     <section id="home">
-      <h3>Página Inicial</h3>
+      <h3>Página Inicial</h3>w
     <div class="galeria">
   <div class="slides">
     <img src="img/arrume.png" alt="Foto 1">
@@ -45,6 +45,7 @@
   </div>
     <!--<button class="prev">&#10094;</button>  seta esquerda 
     <button class="next">&#10095;</button>  seta direita -->
+    <main id="conteudo"></main>
 </div>
 
       <p>Crio arte preta que valoriza a representatividade, explorando o digital e o
@@ -179,14 +180,16 @@ Além da expressão artística, também busco transformar minha arte em trabalho
 <script>
   function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
+    document.body.classList.add("menu-aberto");
   }
+
   function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
+    document.body.classList.remove("menu-aberto");
   }
 
   const slides = document.querySelector('.slides');
   const imagens = document.querySelectorAll('.slides img');
-
   let indice = 0;
 
   function mostrarSlide(novoIndice) {
@@ -195,9 +198,6 @@ Além da expressão artística, também busco transformar minha arte em trabalho
     if (indice < 0) indice = imagens.length - 1;
     slides.style.transform = `translateX(-${indice * 100}%)`;
   }
-
-  // Carrossel automático
   setInterval(() => mostrarSlide(indice + 1), 3000);
 </script>
-
 </html>
